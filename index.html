@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rodrigo López Guerra — CTO & Engineering Leader</title>
+<meta name="description" content="Rodrigo López Guerra — CTO, Engineering Leader, ex-Mercado Libre Director. Building engineering organizations that scale across e-commerce, logistics, OTT, and fintech.">
+<style>
+:root {
+  --bg:      oklch(97.5% 0.004 250);
+  --surface: oklch(100% 0 0);
+  --fg:      oklch(14% 0.012 260);
+  --muted:   oklch(44% 0.02 250);
+  --border:  oklch(87% 0.012 250);
+  --accent:  oklch(50% 0.22 260);
+  --accent-light: oklch(65% 0.16 260 / 0.25);
+  --accent-glow:  oklch(50% 0.22 260 / 0.10);
+  --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  --font-mono:    ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, monospace;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --max-width: 1200px;
+  --content-width: 780px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: var(--font-body); font-size: 17px; line-height: 1.6; color: var(--fg); background: var(--bg); overflow-x: hidden; }
+[data-lang="en"] [lang-es] { display: none; }
+[data-lang="es"] [lang-en] { display: none; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); letter-spacing: -0.03em; }
+h2 { font-size: clamp(2rem, 3.5vw, 3rem); letter-spacing: -0.025em; margin-bottom: var(--space-lg); }
+p { color: var(--muted); margin-bottom: var(--space-md); }
+p strong { color: var(--fg); font-weight: 600; }
+.kicker { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: var(--space-md); display: block; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: var(--space-md) var(--space-lg); display: flex; align-items: center; justify-content: space-between; transition: background 0.4s, backdrop-filter 0.4s; }
+nav.scrolled { background: oklch(100% 0 0 / 0.85); backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2); border-bottom: 1px solid var(--border); }
+.nav-links { display: flex; gap: var(--space-lg); list-style: none; align-items: center; }
+.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: var(--accent); transition: width 0.3s; }
+.nav-links a:hover { color: var(--fg); }
+.nav-links a:hover::after { width: 100%; }
+.lang-toggle { display: flex; gap: 2px; background: var(--border); border-radius: 20px; padding: 2px; }
+.lang-toggle button { border: none; background: none; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; color: var(--muted); padding: 4px 10px; border-radius: 18px; cursor: pointer; transition: all 0.25s; }
+.lang-toggle button.active { background: var(--accent); color: white; }
+.nav-logo { font-family: var(--font-display); font-size: 0.875rem; font-weight: 600; color: var(--fg); text-decoration: none; }
+.nav-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-menu-btn span { display: block; width: 22px; height: 2px; background: var(--fg); margin: 4px 0; border-radius: 2px; transition: all 0.3s; }
+section { padding: var(--space-3xl) var(--space-lg); }
+.section-inner { max-width: var(--max-width); margin: 0 auto; }
+.section-header { max-width: var(--content-width); margin-bottom: var(--space-xl); }
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; padding: var(--space-3xl) var(--space-lg); }
+.hero-gradient { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 65% 55% at 15% 25%, oklch(42% 0.18 260 / 0.50) 0%, transparent 60%), radial-gradient(ellipse 55% 60% at 85% 75%, oklch(38% 0.14 250 / 0.45) 0%, transparent 60%), radial-gradient(ellipse 70% 40% at 50% 50%, oklch(50% 0.22 260 / 0.15) 0%, transparent 50%), var(--bg); animation: logistics-flow 20s ease-in-out infinite alternate; }
+@keyframes logistics-flow { 0% { background: radial-gradient(ellipse 65% 55% at 15% 25%, oklch(42% 0.18 260 / 0.50) 0%, transparent 60%), radial-gradient(ellipse 55% 60% at 85% 75%, oklch(38% 0.14 250 / 0.45) 0%, transparent 60%), radial-gradient(ellipse 70% 40% at 50% 50%, oklch(50% 0.22 260 / 0.15) 0%, transparent 50%), var(--bg); } 25% { background: radial-gradient(ellipse 60% 50% at 25% 35%, oklch(40% 0.20 255 / 0.50) 0%, transparent 55%), radial-gradient(ellipse 50% 55% at 75% 65%, oklch(35% 0.16 245 / 0.45) 0%, transparent 55%), radial-gradient(ellipse 65% 45% at 45% 55%, oklch(48% 0.20 265 / 0.15) 0%, transparent 50%), var(--bg); } 50% { background: radial-gradient(ellipse 70% 50% at 30% 45%, oklch(38% 0.22 265 / 0.45) 0%, transparent 55%), radial-gradient(ellipse 60% 55% at 70% 55%, oklch(40% 0.18 255 / 0.40) 0%, transparent 55%), radial-gradient(ellipse 55% 50% at 50% 40%, oklch(45% 0.24 260 / 0.12) 0%, transparent 50%), var(--bg); } 75% { background: radial-gradient(ellipse 55% 60% at 20% 55%, oklch(44% 0.16 258 / 0.50) 0%, transparent 60%), radial-gradient(ellipse 65% 50% at 80% 45%, oklch(36% 0.18 248 / 0.40) 0%, transparent 55%), radial-gradient(ellipse 60% 45% at 55% 60%, oklch(52% 0.18 262 / 0.15) 0%, transparent 50%), var(--bg); } 100% { background: radial-gradient(ellipse 65% 55% at 15% 25%, oklch(42% 0.18 260 / 0.50) 0%, transparent 60%), radial-gradient(ellipse 55% 60% at 85% 75%, oklch(38% 0.14 250 / 0.45) 0%, transparent 60%), radial-gradient(ellipse 70% 40% at 50% 50%, oklch(50% 0.22 260 / 0.15) 0%, transparent 50%), var(--bg); } }
+.hero-grid-overlay { position: absolute; inset: 0; z-index: 0; opacity: 0.06; background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 20%, transparent 70%); }
+.hero-grid { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.hero-grid svg { width: 100%; height: 100%; }
+.hero-grid .grid-line { stroke: var(--accent); stroke-width: 0.5; opacity: 0.06; }
+.hero-grid .route { fill: none; stroke: var(--accent); stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.1; stroke-dasharray: 4 6; }
+.hero-grid .route-highlight { opacity: 0.25; stroke-width: 2; stroke-dasharray: none; filter: drop-shadow(0 0 6px var(--accent-light)); }
+.hero-grid .node { fill: var(--accent); opacity: 0.12; }
+.hero-grid .node-hub { opacity: 0.3; }
+.hero-grid .node-hub-glow { r: 18; opacity: 0.06; fill: var(--accent); animation: pulse-hub 3s ease-in-out infinite; }
+.hero-grid .node-secondary { opacity: 0.18; r: 5; }
+@keyframes pulse-hub { 0%, 100% { r: 18; opacity: 0.06; } 50% { r: 26; opacity: 0.02; } }
+.hero-grid .packet-trail { fill: none; stroke: var(--accent); stroke-width: 2; opacity: 0.12; stroke-linecap: round; stroke-linejoin: round; }
+.hero-grid .vehicle-body { fill: var(--accent); opacity: 0.7; }
+.hero-grid .vehicle-cab { fill: var(--accent); opacity: 0.45; }
+.hero-grid .vehicle-glow { fill: var(--accent); opacity: 0.08; filter: blur(5px); }
+.hero-grid .vehicle-light { fill: white; opacity: 0.5; }
+.hero-grid .route-label { fill: var(--accent); font-family: var(--font-mono); font-size: 6px; opacity: 0.12; letter-spacing: 0.1em; text-transform: uppercase; }
+.hero-content { position: relative; z-index: 1; max-width: var(--content-width); }
+.hero-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); background: var(--accent-glow); padding: 6px 14px; border-radius: 100px; margin-bottom: var(--space-md); }
+.hero h1 { margin-bottom: var(--space-md); }
+.hero-sub { font-size: clamp(1.125rem, 2vw, 1.375rem); color: var(--muted); max-width: 600px; margin: 0 auto var(--space-xl); line-height: 1.6; }
+.hero-actions { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; text-decoration: none; transition: all 0.25s; cursor: pointer; border: none; }
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
+.btn-outline { background: transparent; color: var(--fg); border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: var(--fg); transform: translateY(-2px); }
+.scroll-indicator { position: absolute; bottom: var(--space-xl); left: 50%; transform: translateX(-50%); z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--muted); font-size: 0.75rem; font-family: var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; animation: float 2s ease-in-out infinite; }
+.scroll-indicator .line { width: 1px; height: 32px; background: linear-gradient(to bottom, var(--muted), transparent); }
+@keyframes float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-6px); } }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: start; }
+.about-text p { font-size: 1.0625rem; line-height: 1.7; }
+.philosophy-pillars { display: flex; flex-direction: column; gap: var(--space-md); }
+.pillar { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-lg); transition: all 0.3s; }
+.pillar:hover { border-color: var(--accent); box-shadow: 0 4px 20px var(--accent-glow); transform: translateY(-2px); }
+.pillar h4 { font-size: 1rem; margin-bottom: var(--space-sm); color: var(--accent); }
+.pillar p { font-size: 0.9375rem; margin-bottom: 0; }
+.trajectory-list { display: grid; gap: var(--space-md); }
+.role-card { display: grid; grid-template-columns: 180px 1fr; gap: var(--space-lg); padding: var(--space-lg); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); transition: all 0.3s; text-decoration: none; color: inherit; }
+.role-card:hover { border-color: var(--accent); transform: translateX(4px); box-shadow: 0 2px 16px var(--accent-glow); }
+.role-period { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--muted); padding-top: 2px; white-space: nowrap; }
+.role-title { font-size: 1.125rem; font-weight: 600; margin-bottom: 2px; }
+.role-company { font-size: 0.9375rem; color: var(--accent); font-weight: 500; margin-bottom: var(--space-sm); }
+.role-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-bottom: 0; }
+.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }
+.metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-xl) var(--space-lg); text-align: center; transition: all 0.3s; }
+.metric-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 24px var(--accent-glow); }
+.metric-number { font-family: var(--font-display); font-size: clamp(2.25rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.03em; color: var(--fg); line-height: 1; margin-bottom: var(--space-sm); }
+.metric-number .plus { color: var(--accent); }
+.metric-label { font-size: 0.875rem; color: var(--muted); line-height: 1.4; }
+.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }
+.skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-lg); transition: all 0.3s; }
+.skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.skill-icon { font-size: 1.5rem; margin-bottom: var(--space-sm); display: block; color: var(--accent); }
+.skill-name { font-size: 0.9375rem; font-weight: 600; margin-bottom: 4px; }
+.skill-desc { font-size: 0.8125rem; color: var(--muted); line-height: 1.5; margin-bottom: 0; }
+.achievements-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+.achievement-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-lg); transition: all 0.3s; }
+.achievement-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 20px var(--accent-glow); }
+.achievement-card h4 { font-size: 1rem; margin-bottom: var(--space-sm); }
+.achievement-card p { font-size: 0.875rem; margin-bottom: 0; }
+.education-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+.edu-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-lg); transition: all 0.3s; }
+.edu-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 20px var(--accent-glow); }
+.edu-card h4 { font-size: 1rem; margin-bottom: var(--space-xs); }
+.edu-card .edu-school { font-size: 0.8125rem; color: var(--accent); font-weight: 500; margin-bottom: var(--space-xs); }
+.edu-card p { font-size: 0.875rem; margin-bottom: 0; }
+.edu-badges { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md); }
+.edu-badge { background: var(--accent-light); color: var(--accent); padding: 4px 12px; border-radius: 100px; font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 500; line-height: 1.4; }
+.lang-row { display: flex; gap: var(--space-md); flex-wrap: wrap; margin-top: var(--space-md); }
+.lang-item { display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 100px; font-size: 0.8125rem; }
+.lang-item strong { font-weight: 600; color: var(--fg); }
+.lang-item span { color: var(--muted); }
+.contact { text-align: center; background: var(--fg); color: white; position: relative; overflow: hidden; }
+.contact::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 30% 20%, oklch(50% 0.22 260 / 0.18) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 70% 80%, oklch(40% 0.18 250 / 0.12) 0%, transparent 60%); z-index: 0; }
+.contact .section-inner { position: relative; z-index: 1; }
+.contact h2 { color: white; }
+.contact p { color: oklch(78% 0.02 250); }
+.contact-actions { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; margin-top: var(--space-lg); }
+.contact .btn-primary { background: white; color: var(--fg); }
+.contact .btn-primary:hover { box-shadow: 0 8px 32px oklch(0% 0 0 / 0.3); }
+.contact .btn-outline { border-color: oklch(68% 0.03 250); color: white; }
+.contact .btn-outline:hover { border-color: white; }
+footer { padding: var(--space-lg); text-align: center; font-size: 0.8125rem; color: var(--muted); border-top: 1px solid var(--border); }
+.reveal { opacity: 1; transform: translateY(0); }
+@media (max-width: 1024px) { .metrics-grid { grid-template-columns: repeat(2, 1fr); } .skills-grid { grid-template-columns: repeat(3, 1fr); } .education-grid { grid-template-columns: 1fr; } }
+@media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; } .role-card { grid-template-columns: 1fr; gap: var(--space-sm); } .skills-grid { grid-template-columns: repeat(2, 1fr); } .achievements-grid { grid-template-columns: 1fr; } section { padding: var(--space-2xl) var(--space-md); } .nav-links { gap: var(--space-md); } .nav-links a { font-size: 0.8125rem; } }
+@media (max-width: 600px) { .metrics-grid { grid-template-columns: repeat(2, 1fr); } .skills-grid { grid-template-columns: 1fr 1fr; } .hero-actions { flex-direction: column; align-items: center; } .nav-links { display: none; } .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: oklch(100% 0 0 / 0.98); backdrop-filter: blur(20px); justify-content: center; align-items: center; gap: var(--space-xl); z-index: 200; } .nav-menu-btn { display: block; z-index: 300; position: relative; } }
+@media (max-width: 390px) { h1 { font-size: 2rem; } .hero { min-height: 90vh; } }
+html, body { overflow-x: hidden; width: 100%; }
+.whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; align-items: center; gap: 10px; text-decoration: none; transition: all 0.3s ease; }
+.whatsapp-float:hover { transform: translateY(-3px); }
+.whatsapp-float .wa-badge { background: #25D366; color: white; padding: 12px 16px 12px 14px; border-radius: 100px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35); font-family: var(--font-body); font-size: 0.875rem; font-weight: 600; }
+.whatsapp-float .wa-badge svg { flex-shrink: 0; }
+.whatsapp-float .wa-label { background: white; color: var(--fg); padding: 8px 16px; border-radius: 100px; font-family: var(--font-body); font-size: 0.8125rem; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.08); white-space: nowrap; opacity: 0; transform: translateX(8px); transition: all 0.3s ease; pointer-events: none; }
+.whatsapp-float:hover .wa-label { opacity: 1; transform: translateX(0); }
+@media (max-width: 480px) { .whatsapp-float { bottom: 16px; right: 16px; } .whatsapp-float .wa-label { display: none; } }
+</style>
+</head>
+<body>
+<nav id="nav">
+  <span class="nav-logo" lang-en></span>
+  <span class="nav-logo" lang-es></span>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" lang-en>About</a><a href="#about" lang-es>Sobre mí</a></li>
+    <li><a href="#trajectory" lang-en>Trajectory</a><a href="#trajectory" lang-es>Trayectoria</a></li>
+    <li><a href="#metrics" lang-en>Impact</a><a href="#metrics" lang-es>Impacto</a></li>
+    <li><a href="#skills" lang-en>Strengths</a><a href="#skills" lang-es>Fortalezas</a></li>
+    <li><a href="#education" lang-en>Education</a><a href="#education" lang-es>Formación</a></li>
+    <li><a href="#contact" lang-en>Contact</a><a href="#contact" lang-es>Contacto</a></li>
+    <li><div class="lang-toggle"><button onclick="setLang('en')" id="langEnBtn" class="active">EN</button><button onclick="setLang('es')" id="langEsBtn">ES</button></div></li>
+  </ul>
+  <button class="nav-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<section class="hero" id="hero">
+  <div class="hero-gradient"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-grid" id="heroGrid"></div>
+  <div class="hero-content">
+    <span class="hero-badge" lang-en>Engineering Leadership &bull; Logistics &amp; eCommerce</span>
+    <span class="hero-badge" lang-es>Liderazgo en Ingeniería &bull; Logística y eCommerce</span>
+    <h1>Rodrigo López Guerra</h1>
+    <p class="hero-sub" lang-en>CTO &amp; Engineering Leader. 20 years building <strong>engineering organizations that scale</strong> across e-commerce, logistics, OTT, and fintech — from startups to platforms serving 150M+ users.</p>
+    <p class="hero-sub" lang-es>CTO &amp; Líder de Ingeniería. 20 años construyendo <strong>organizaciones de ingeniería que escalan</strong> en e-commerce, logística, OTT y fintech — desde startups hasta plataformas con 150M+ usuarios.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary" lang-en>Let's talk</a>
+      <a href="#contact" class="btn btn-primary" lang-es>Hablemos</a>
+      <a href="#trajectory" class="btn btn-outline" lang-en>View trajectory</a>
+      <a href="#trajectory" class="btn btn-outline" lang-es>Ver trayectoria</a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span lang-en>Scroll</span><span lang-es>Desplázate</span><div class="line"></div></div>
+</section>
+<section id="about">
+  <div class="section-inner">
+    <div class="section-header reveal"><span class="kicker" lang-en>About</span><span class="kicker" lang-es>Sobre mí</span><h2 lang-en>Leadership Philosophy</h2><h2 lang-es>Filosofía de Liderazgo</h2></div>
+    <div class="about-grid">
+      <div class="about-text reveal reveal-delay-1">
+        <p lang-en>With an MBA and a Computer Science background, I bridge business strategy and technical execution. Over 20 years across e-commerce, logistics, OTT media, fintech, retail, and sports — I've built products that serve millions and engineering organizations that ship.</p>
+        <p lang-en>I operate at the intersection of <strong>entrepreneurial agility</strong> and <strong>corporate scalability</strong>, having founded my own startups and led Director-level initiatives at massive tech ecosystems like Mercado Libre. I understand the strengths and challenges of both worlds — helping growing companies scale from chaos to structure without losing their soul.</p>
+        <p lang-es>Con un MBA y formación en Ciencias de la Computación, conecto la estrategia de negocio con la ejecución técnica. Más de 20 años en e-commerce, logística, OTT media, fintech, retail y deportes — construyendo productos que sirven a millones y organizaciones de ingeniería que entregan.</p>
+        <p lang-es>Opero en la intersección entre la <strong>agilidad emprendedora</strong> y la <strong>escalabilidad corporativa</strong>, habiendo fundado mis propias startups y liderado iniciativas a nivel Director en ecosistemas tecnológicos masivos como Mercado Libre. Entiendo las fortalezas y desafíos de ambos mundos, ayudando a empresas en crecimiento a escalar del caos a la estructura sin perder su esencia.</p>
+      </div>
+      <div class="philosophy-pillars reveal reveal-delay-2">
+        <div class="pillar"><h4 lang-en>Scale &amp; Culture</h4><h4 lang-es>Escala y Cultura</h4><p lang-en>I've grown high-performance teams from 5 to 300+ people. I believe you only win when your team wins. My role is to create a compelling vision and clear the path for talent to execute.</p><p lang-es>He escalado equipos de alto rendimiento de 5 a 300+ personas. Creo que solo se gana cuando tu equipo gana. Mi rol es crear una visión convincente y despejar el camino para que el talento ejecute.</p></div>
+        <div class="pillar"><h4 lang-en>Execution &amp; Pragmatism</h4><h4 lang-es>Ejecución y Pragmatismo</h4><p lang-en>I focus on getting things done by building resilient architectures. I rely on high-quality, data-driven decisions. I believe in having a plan but staying agile enough to pivot when reality strikes.</p><p lang-es>Me enfoco en hacer que las cosas sucedan construyendo arquitecturas resilientes. Me baso en decisiones de alta calidad impulsadas por datos. Creo en tener un plan pero mantenerme lo suficientemente ágil para pivotar cuando la realidad lo exige.</p></div>
+        <div class="pillar"><h4 lang-en>Continuous Growth</h4><h4 lang-es>Crecimiento Continuo</h4><p lang-en>Technology moves fast, so I stay grounded by constantly learning. I maintain a hands-on mindset — from backlog definition to launch. I still enjoy weekend coding projects to keep the spark alive.</p><p lang-es>La tecnología avanza rápido, por eso me mantengo firme aprendiendo constantemente. Mantengo una mentalidad práctica — desde la definición del backlog hasta el lanzamiento. Todavía disfruto proyectos de código los fines de semana para mantener viva la chispa.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="trajectory">
+  <div class="section-inner">
+    <div class="section-header reveal"><span class="kicker" lang-en>Career</span><span class="kicker" lang-es>Trayectoria</span><h2 lang-en>Trajectory</h2><h2 lang-es>Trayectoria</h2></div>
+    <div class="trajectory-list">
+      <div class="role-card reveal reveal-delay-1"><span class="role-period">2024 — Present</span><div><div lang-en class="role-title">Fractional Product &amp; Tech Advisor</div><div lang-es class="role-title">Fractional Product &amp; Tech Advisor</div><div class="role-company">Freelance &bull; Flydevs, EPIX</div><p lang-en class="role-desc">Driving product and technology for multiple ventures. Scaling teams of 100+ across product management, AI agent design for lead qualification in the US, and digital health platforms for medical centers. Setting product roadmaps that align business strategy with technical capabilities.</p><p lang-es class="role-desc">Impulsando producto y tecnología para múltiples ventures. Escalando equipos de 100+ en gestión de producto, diseño de agentes de IA para calificación de leads en EE.UU., y plataformas de salud digital. Definiendo roadmaps que alinean estrategia de negocio con capacidades técnicas.</p></div></div>
+      <a href="https://www.linkedin.com/in/rodrigolopezguerra/" target="_blank" rel="noopener" class="role-card reveal reveal-delay-2"><span class="role-period">2022 — 2024</span><div><div lang-en class="role-title">Software &amp; Product Development Director</div><div lang-es class="role-title">Director de Desarrollo de Software y Producto</div><div class="role-company">Mercado Libre</div><p lang-en class="role-desc">Built Mercado Play (OTT streaming) from zero to 150M+ activated users. Drove OKR/KPI-driven product strategy across the e-commerce ecosystem — optimizing user experience, engagement, and MAU acquisition. Scaled engineering org to 300+ across LATAM. Built the Colombia hub from scratch.</p><p lang-es class="role-desc">Construí Mercado Play (OTT streaming) de 0 a 150M+ usuarios activados. Lideré estrategia de producto OKR/KPI en el ecosistema e-commerce — optimizando experiencia de usuario, engagement y adquisición de MAU. Escalé ingeniería a 300+ personas en LATAM. Construí el hub de Colombia desde cero.</p></div></a>
+      <div class="role-card reveal reveal-delay-3"><span class="role-period">2020 — 2022</span><div><div class="role-title">Chief Technology Officer</div><div class="role-company">Ixpandit Fintech Factory</div><p lang-en class="role-desc">CTO and Product Lead for a fintech factory digitizing traditional businesses. Led end-to-end product lifecycle — from user research and UX to backlog prioritization. Combined financial domain expertise with e-commerce agility to build data-driven financing services.</p><p lang-es class="role-desc">CTO y Product Lead de una fintech que digitaliza negocios tradicionales. Lideré el ciclo de vida completo del producto — desde investigación de usuarios y UX hasta priorización del backlog. Combiné expertise financiero con agilidad e-commerce para construir servicios de financiación data-driven.</p></div></div>
+      <div class="role-card reveal reveal-delay-4"><span class="role-period">2018 — 2019</span><div><div lang-en class="role-title">Director IT</div><div lang-es class="role-title">Director de TI</div><div class="role-company">TELEFE (Viacom)</div><p lang-en class="role-desc">Led IT strategy and digital transformation for Argentina's largest television network. Managed the technology backbone for broadcast operations reaching audiences across the Americas, Europe, Asia, and Oceania.</p><p lang-es class="role-desc">Lideré la estrategia de TI y transformación digital de la cadena de televisión más grande de Argentina. Gestioné la columna vertebral tecnológica para transmisiones que llegan a audiencias en América, Europa, Asia y Oceanía.</p></div></div>
+      <div class="role-card reveal reveal-delay-1"><span class="role-period">Jun 2017 — Sep 2018</span><div><div lang-en class="role-title">CIO — The Unified TV Ecosystem</div><div lang-es class="role-title">CIO — Ecosistema TV Unificado</div><div class="role-company">TOOLBOX</div><p lang-en class="role-desc">Chief Information Officer for the only company in the region with a complete, unified content distribution proposal. Managed platform infrastructure where over 90% of TVE traffic in the region passed through, supporting high-demand streaming flows.</p><p lang-es class="role-desc">CIO de la única empresa en la región con una propuesta unificada de distribución de contenido. Gestioné la infraestructura donde circulaba más del 90% del tráfico TVE de la región, soportando flujos de alta demanda.</p></div></div>
+      <div class="role-card reveal reveal-delay-2"><span class="role-period">Apr 2015 — May 2017</span><div><div lang-en class="role-title">Partner &amp; CTO</div><div lang-es class="role-title">Partner &amp; CTO</div><div class="role-company">PIXPOL → CLICKYPASS</div><p lang-en class="role-desc">Co-founded and led technology for a fitness subscription platform — monthly pass to thousands of classes. Managed the product lifecycle from conception to launch.</p><p lang-es class="role-desc">Co-fundé y lideré la tecnología de una plataforma de suscripción fitness — pase mensual a miles de clases. Gestioné el ciclo de vida del producto de concepción a lanzamiento.</p></div></div>
+      <div class="role-card reveal reveal-delay-3"><span class="role-period">2012 — 2014</span><div><div lang-en class="role-title">CISO — South Europe</div><div lang-es class="role-title">CISO — Europa del Sur</div><div class="role-company">Decathlon Internacional</div><p lang-en class="role-desc">Chief Information Security Officer for South Europe. Led international SAP and logistics integration projects, managing schedules, risks, and multi-country stakeholder communication. Established security governance, risk management, and business continuity programs across the region.</p><p lang-es class="role-desc">CISO para Europa del Sur. Lideré proyectos internacionales de integración SAP y logística, gestionando cronogramas, riesgos y comunicación con stakeholders en múltiples países. Establecí programas de gobierno de seguridad, gestión de riesgos y continuidad del negocio.</p></div></div>
+      <div class="role-card reveal reveal-delay-4"><span class="role-period">2014 — 2020</span><div><div class="role-title">Co-Founder</div><div class="role-company">Codi Software</div><p lang-en class="role-desc">Co-founded a software development and digital transformation company. Managed complete product life cycles for multiple clients, from requirements to delivery. Implemented Scrum building a results-oriented agile culture.</p><p lang-es class="role-desc">Co-fundé una empresa de desarrollo de software y transformación digital. Gestioné ciclos de vida completos de productos para múltiples clientes. Implementé Scrum construyendo una cultura ágil orientada a resultados.</p></div></div>
+    </div>
+  </div>
+</section>
+<section id="metrics">
+  <div class="section-inner">
+    <div class="section-header reveal"><span class="kicker" lang-en>By the numbers</span><span class="kicker" lang-es>En números</span><h2 lang-en>Impact Metrics</h2><h2 lang-es>Métricas de Impacto</h2></div>
+    <div class="metrics-grid">
+      <div class="metric-card reveal reveal-delay-1"><div class="metric-number">150<span class="plus">M</span><span class="plus">+</span></div><p class="metric-label" lang-en>Activated users on Mercado Play</p><p class="metric-label" lang-es>Usuarios activados en Mercado Play</p></div>
+      <div class="metric-card reveal reveal-delay-2"><div class="metric-number">300<span class="plus">+</span></div><p class="metric-label" lang-en>Engineers led across LATAM</p><p class="metric-label" lang-es>Ingenieros liderados en LATAM</p></div>
+      <div class="metric-card reveal reveal-delay-3"><div class="metric-number">5<span class="plus">&rarr;</span>300</div><p class="metric-label" lang-en>Team scale trajectory</p><p class="metric-label" lang-es>Trayectoria de escalado de equipos</p></div>
+      <div class="metric-card reveal reveal-delay-4"><div class="metric-number">20<span class="plus">+</span></div><p class="metric-label" lang-en>Years of engineering leadership</p><p class="metric-label" lang-es>Años de liderazgo en ingeniería</p></div>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header reveal"><span class="kicker" lang-en>Expertise</span><span class="kicker" lang-es>Experiencia</span><h2 lang-en>Strengths &amp; Capabilities</h2><h2 lang-es>Fortalezas y Capacidades</h2></div>
+    <div class="skills-grid">
+      <div class="skill-card reveal reveal-delay-1"><span class="skill-icon">◈</span><div class="skill-name" lang-en>Leadership &amp; Team Building</div><div class="skill-name" lang-es>Liderazgo y Formación de Equipos</div><p class="skill-desc" lang-en>Scaled teams from 5 to 300+, hiring and developing engineering talent across multiple countries and cultures.</p><p class="skill-desc" lang-es>Equipos escalados de 5 a 300+, contratando y desarrollando talento de ingeniería en múltiples países y culturas.</p></div>
+      <div class="skill-card reveal reveal-delay-2"><span class="skill-icon">◈</span><div class="skill-name" lang-en>Logistics &amp; Supply Chain</div><div class="skill-name" lang-es>Logística y Cadena de Suministro</div><p class="skill-desc" lang-en>SAP integration and logistics optimization at Decathlon. eCommerce logistics, checkout, and payment flows across Mercado Libre's ecosystem.</p><p class="skill-desc" lang-es>Integración SAP y optimización logística en Decathlon. Flujos logísticos de e-commerce, checkout y pagos en el ecosistema de Mercado Libre.</p></div>
+      <div class="skill-card reveal reveal-delay-3"><span class="skill-icon">◈</span><div class="skill-name" lang-en>eCommerce &amp; Product Dev</div><div class="skill-name" lang-es>eCommerce y Desarrollo de Producto</div><p class="skill-desc" lang-en>Built Mercado Play from zero to 150M+. Expertise in checkout, catalog, conversion, OTT, and fintech platforms.</p><p class="skill-desc" lang-es>Construí Mercado Play de 0 a 150M+. Experiencia en checkout, catálogo, conversión, OTT y plataformas fintech.</p></div>
+      <div class="skill-card reveal reveal-delay-4"><span class="skill-icon">◈</span><div class="skill-name" lang-en>Engineering Strategy</div><div class="skill-name" lang-es>Estrategia de Ingeniería</div><p class="skill-desc" lang-en>Building resilient architectures and high-performance organizations. From legacy migration to greenfield platform builds.</p><p class="skill-desc" lang-es>Construyendo arquitecturas resilientes y organizaciones de alto rendimiento. Desde migración legacy hasta plataformas greenfield.</p></div>
+      <div class="skill-card reveal reveal-delay-1"><span class="skill-icon">◈</span><div class="skill-name" lang-en>Information Security</div><div class="skill-name" lang-es>Seguridad de la Información</div><p class="skill-desc" lang-en>CISO at Decathlon. Security governance, risk management, business continuity, and data protection programs.</p><p class="skill-desc" lang-es>CISO en Decathlon. Gobierno de seguridad, gestión de riesgos, continuidad del negocio y protección de datos.</p></div>
+      <div class="skill-card reveal reveal-delay-2"><span class="skill-icon">◈</span><div class="skill-name" lang-en>Agile &amp; Lean Execution</div><div class="skill-name" lang-es>Ejecución Ágil y Lean</div><p class="skill-desc" lang-en>Certified ScrumMaster. Continuous delivery culture, backlog management, and agile transformations across organizations.</p><p class="skill-desc" lang-es>Certified ScrumMaster. Cultura de entrega continua, gestión de backlog y transformaciones ágiles en organizaciones.</p></div>
+      <div class="skill-card reveal reveal-delay-3"><span class="skill-icon">◈</span><div class="skill-name" lang-en>Data-Driven Decisions</div><div class="skill-name" lang-es>Decisiones Basadas en Datos</div><p class="skill-desc" lang-en>OKR/KPI-driven product strategy. Google Analytics, Looker. Qualitative and quantitative user research for product-market fit.</p><p class="skill-desc" lang-es>Estrategia de producto OKR/KPI-driven. Google Analytics, Looker. Investigación cualitativa y cuantitativa para product-market fit.</p></div>
+      <div class="skill-card reveal reveal-delay-4"><span class="skill-icon">◈</span><div class="skill-name" lang-en>Executive Communication</div><div class="skill-name" lang-es>Comunicación Ejecutiva</div><p class="skill-desc" lang-en>Bridging business strategy and technical execution across C-level, board, and team levels. Fluent in 4 languages.</p><p class="skill-desc" lang-es>Uniendo estrategia de negocio y ejecución técnica a nivel C-level, directorio y equipos. Fluido en 4 idiomas.</p></div>
+    </div>
+  </div>
+</section>
+<section id="education">
+  <div class="section-inner">
+    <div class="section-header reveal"><span class="kicker" lang-en>Background</span><span class="kicker" lang-es>Formación</span><h2 lang-en>Education &amp; Certifications</h2><h2 lang-es>Educación y Certificaciones</h2></div>
+    <div class="education-grid">
+      <div class="edu-card reveal reveal-delay-1"><h4 lang-en>Master of Business Administration (MBA)</h4><h4 lang-es>Master of Business Administration (MBA)</h4><div class="edu-school">UADE Business School</div><p lang-en>Strategic management, finance, and organizational leadership complementing a technical foundation.</p><p lang-es>Gestión estratégica, finanzas y liderazgo organizacional complementando una base técnica.</p></div>
+      <div class="edu-card reveal reveal-delay-2"><h4 lang-en>Bachelor's Degree in Computer Science</h4><h4 lang-es>Licenciatura en Ciencias de la Computación</h4><div class="edu-school">UADE</div><p lang-en>Software engineering, algorithms, data structures, and systems architecture — the technical foundation for 20+ years of engineering leadership.</p><p lang-es>Ingeniería de software, algoritmos, estructuras de datos y arquitectura de sistemas — la base técnica para 20+ años de liderazgo en ingeniería.</p></div>
+    </div>
+    <div class="edu-badges reveal reveal-delay-3"><span class="edu-badge">Certified ScrumMaster (Scrum Alliance)</span><span class="edu-badge" lang-en>eCommerce &amp; Cloud Computing (EOI)</span><span class="edu-badge" lang-es>eCommerce &amp; Cloud Computing (EOI)</span></div>
+    <div class="lang-row reveal reveal-delay-4"><div class="lang-item"><strong lang-en>Spanish</strong><strong lang-es>Español</strong><span lang-en>Native</span><span lang-es>Nativo</span></div><div class="lang-item"><strong>English</strong><span lang-en>Professional</span><span lang-es>Profesional</span></div><div class="lang-item"><strong>French</strong><span lang-en>Professional</span><span lang-es>Profesional</span></div><div class="lang-item"><strong>Portuguese</strong><span lang-en>Basic</span><span lang-es>Básico</span></div></div>
+  </div>
+</section>
+<section id="achievements">
+  <div class="section-inner">
+    <div class="section-header reveal"><span class="kicker" lang-en>Key Wins</span><span class="kicker" lang-es>Logros Clave</span><h2 lang-en>Selected Achievements</h2><h2 lang-es>Logros Seleccionados</h2></div>
+    <div class="achievements-grid">
+      <div class="achievement-card reveal reveal-delay-1"><h4 lang-en>Mercado Play — 0 to 150M</h4><h4 lang-es>Mercado Play — 0 a 150M</h4><p lang-en>Built Latin America's largest OTT streaming platform from scratch. Grew from concept to 150M+ activated users, defining product, architecture, and engineering organization across 6 countries.</p><p lang-es>Construí la plataforma OTT más grande de LATAM desde cero. Crecí de concepto a 150M+ usuarios activados, definiendo producto, arquitectura y organización de ingeniería en 6 países.</p></div>
+      <div class="achievement-card reveal reveal-delay-2"><h4 lang-en>Colombia Hub — Built from Zero</h4><h4 lang-es>Hub Colombia — Construido desde Cero</h4><p lang-en>Established Mercado Libre's Colombia engineering hub, making all founding hires and building the local engineering culture from the ground up.</p><p lang-es>Establecí el hub de ingeniería de Mercado Libre en Colombia, realizando todas las contrataciones fundacionales y construyendo la cultura local de ingeniería.</p></div>
+      <div class="achievement-card reveal reveal-delay-3"><h4 lang-en>300+ Person Engineering Org</h4><h4 lang-es>Org de Ingeniería de 300+ Personas</h4><p lang-en>Scaled from a small team to 300+ engineers across Argentina, Brazil, Mexico, Colombia, Chile, and Uruguay.</p><p lang-es>Escalé de equipo pequeño a 300+ ingenieros en Argentina, Brasil, México, Colombia, Chile y Uruguay.</p></div>
+      <div class="achievement-card reveal reveal-delay-4"><h4 lang-en>Multi-Industry Leadership</h4><h4 lang-es>Liderazgo Multi-Industria</h4><p lang-en>CTO at a fintech, CISO at a global retailer (logistics + SAP), Director IT at a media network, co-founder of multiple startups — proven leadership across e-commerce, logistics, fintech, media, retail, and sports.</p><p lang-es>CTO en fintech, CISO en retailer global (logística + SAP), Director de TI en red de medios, co-fundador de startups — liderazgo probado en e-commerce, logística, fintech, medios, retail y deportes.</p></div>
+    </div>
+  </div>
+</section>
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="kicker" lang-en style="color: oklch(68% 0.15 260);">Contact</span><span class="kicker" lang-es style="color: oklch(68% 0.15 260);">Contacto</span>
+      <h2 lang-en>Let's talk</h2><h2 lang-es>Hablemos</h2>
+      <p lang-en style="max-width: 520px; margin: 0 auto;">Whether you're building the next big platform or scaling an existing one — I'd love to hear about what you're working on and explore how I can help.</p>
+      <p lang-es style="max-width: 520px; margin: 0 auto;">Ya sea que estés construyendo la próxima gran plataforma o escalando una existente — me encantaría saber en qué estás trabajando y explorar cómo puedo ayudar.</p>
+      <div class="contact-actions">
+        <a href="mailto:rodrigolopezguerra@gmail.com" class="btn btn-primary">rodrigolopezguerra@gmail.com</a>
+        <a href="https://www.linkedin.com/in/rodrigolopezguerra/" target="_blank" rel="noopener" class="btn btn-outline" lang-en>LinkedIn</a>
+        <a href="https://www.linkedin.com/in/rodrigolopezguerra/" target="_blank" rel="noopener" class="btn btn-outline" lang-es>LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer><p lang-en style="margin-bottom: 0;">&copy; 2026 Rodrigo López Guerra</p><p lang-es style="margin-bottom: 0;">&copy; 2026 Rodrigo López Guerra</p></footer>
+<script>
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.getElementById('langEnBtn').classList.toggle('active', lang === 'en');
+  document.getElementById('langEsBtn').classList.toggle('active', lang === 'es');
+  localStorage.setItem('portfolio-lang', lang);
+}
+const savedLang = localStorage.getItem('portfolio-lang');
+if (savedLang) setLang(savedLang);
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+function closeNav() { document.getElementById('navLinks').classList.remove('open'); }
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeNav));
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        entry.target.animate([{ transform: 'translateY(16px)' },{ transform: 'translateY(0)' }],{ duration: 500, easing: 'ease-out', fill: 'backwards' });
+      }
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+if (window.scrollY > 60) nav.classList.add('scrolled');
+(function(){
+  var container = document.getElementById('heroGrid');
+  if (!container) return;
+  var ns = 'http://www.w3.org/2000/svg';
+  var W = 1400, H = 800;
+  var svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+  svg.style.width = '100%'; svg.style.height = '100%';
+  var defs = document.createElementNS(ns, 'defs');
+  defs.innerHTML = '<filter id="pulseGlow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>';
+  svg.appendChild(defs);
+  for (var x = 140; x < W; x += 140) {
+    var line = document.createElementNS(ns, 'line');
+    line.setAttribute('class', 'grid-line');
+    line.setAttribute('x1', x); line.setAttribute('y1', '0');
+    line.setAttribute('x2', x); line.setAttribute('y2', '' + H);
+    svg.appendChild(line);
+  }
+  for (var y = 100; y < H; y += 100) {
+    var line = document.createElementNS(ns, 'line');
+    line.setAttribute('class', 'grid-line');
+    line.setAttribute('x1', '0'); line.setAttribute('y1', '' + y);
+    line.setAttribute('x2', '' + W); line.setAttribute('y2', '' + y);
+    svg.appendChild(line);
+  }
+  var hubData = [
+    {id:'H1',cx:140,cy:200,type:'hub',label:'DC N'},{id:'H2',cx:420,cy:100,type:'hub',label:'DC NE'},{id:'H3',cx:700,cy:200,type:'hub',label:'DC E'},{id:'H4',cx:280,cy:500,type:'hub',label:'DC W'},{id:'H5',cx:700,cy:450,type:'hub',label:'HUB CENTRAL'},{id:'H6',cx:980,cy:300,type:'hub',label:'DC SE'},{id:'H7',cx:560,cy:700,type:'hub',label:'DC SW'},{id:'H8',cx:840,cy:700,type:'hub',label:'DC S'},{id:'H9',cx:140,cy:450,type:'secondary'},{id:'H10',cx:1120,cy:500,type:'secondary'}
+  ];
+  var routes = ['M 140 200 L 420 200 L 420 100','M 420 100 L 420 200 L 700 200','M 140 200 L 140 500 L 280 500','M 280 500 L 700 500 L 700 450','M 700 450 L 700 300 L 980 300','M 700 200 L 700 300 L 980 300','M 700 450 L 560 450 L 560 700','M 560 700 L 840 700','M 980 300 L 980 700 L 840 700','M 140 200 L 140 450','M 140 450 L 280 450 L 280 500','M 420 100 L 420 450 L 700 450','M 700 200 L 1120 200 L 1120 500','M 1120 500 L 1120 300 L 980 300','M 140 200 L 140 450 L 700 450','M 700 450 L 700 200','M 280 500 L 140 500 L 140 450','M 560 700 L 280 700 L 280 500','M 980 300 L 700 300 L 700 450','M 140 200 L 700 200 L 700 100'];
+  routes.forEach(function(d,i){
+    var p = document.createElementNS(ns, 'path');
+    p.setAttribute('class', i < 5 ? 'route route-highlight' : 'route');
+    p.setAttribute('d', d);
+    svg.appendChild(p);
+  });
+  hubData.forEach(function(h){
+    var label = document.createElementNS(ns, 'text');
+    label.setAttribute('class', 'route-label');
+    label.setAttribute('x', '' + (h.cx + 10));
+    label.setAttribute('y', '' + (h.cy - 10));
+    label.textContent = h.label || h.id;
+    svg.appendChild(label);
+    if (h.type === 'hub') {
+      var glow = document.createElementNS(ns, 'circle');
+      glow.setAttribute('class', 'node-hub-glow');
+      glow.setAttribute('cx', '' + h.cx);
+      glow.setAttribute('cy', '' + h.cy);
+      svg.appendChild(glow);
+    }
+    var n = document.createElementNS(ns, 'circle');
+    n.setAttribute('class', h.type === 'hub' ? 'node node-hub' : 'node node-secondary');
+    n.setAttribute('cx', '' + h.cx);
+    n.setAttribute('cy', '' + h.cy);
+    svg.appendChild(n);
+  });
+  var totalPackets = 25;
+  var packetData = [];
+  for (var i = 0; i < totalPackets; i++) {
+    var trail = document.createElementNS(ns, 'polyline');
+    trail.setAttribute('class', 'packet-trail');
+    svg.appendChild(trail);
+    var packetG = document.createElementNS(ns, 'g');
+    var vehicleG = document.createElementNS(ns, 'g');
+    var glow = document.createElementNS(ns, 'circle');
+    glow.setAttribute('class', 'vehicle-glow');
+    glow.setAttribute('r', '12');
+    var body = document.createElementNS(ns, 'rect');
+    body.setAttribute('class', 'vehicle-body');
+    body.setAttribute('width', '11');
+    body.setAttribute('height', '6');
+    body.setAttribute('x', '-5.5');
+    body.setAttribute('y', '-3');
+    body.setAttribute('rx', '2');
+    var cab = document.createElementNS(ns, 'rect');
+    cab.setAttribute('class', 'vehicle-cab');
+    cab.setAttribute('width', '4');
+    cab.setAttribute('height', '5');
+    cab.setAttribute('x', '5.5');
+    cab.setAttribute('y', '-2.5');
+    cab.setAttribute('rx', '2');
+    var headlight = document.createElementNS(ns, 'circle');
+    headlight.setAttribute('class', 'vehicle-light');
+    headlight.setAttribute('r', '1.2');
+    headlight.setAttribute('cx', '7.5');
+    headlight.setAttribute('cy', '-1');
+    vehicleG.appendChild(glow);
+    vehicleG.appendChild(body);
+    vehicleG.appendChild(cab);
+    vehicleG.appendChild(headlight);
+    packetG.appendChild(vehicleG);
+    svg.appendChild(packetG);
+    packetData.push({
+      packetG: packetG,
+      vehicleG: vehicleG,
+      trailEl: trail,
+      trailHistory: [],
+      routeIdx: Math.floor(Math.random() * routes.length),
+      speed: 4000 + Math.random() * 6000,
+      offset: Math.random(),
+      reverse: Math.random() > 0.5
+    });
+  }
+  container.appendChild(svg);
+  var pathEls = svg.querySelectorAll('.route');
+  function animatePackets() {
+    packetData.forEach(function(p){
+      var pathEl = pathEls[p.routeIdx];
+      if (!pathEl) return;
+      var len = pathEl.getTotalLength();
+      var t = ((performance.now() / p.speed + p.offset) % 1);
+      if (p.reverse) t = 1 - t;
+      var pt = pathEl.getPointAtLength(t * len);
+      p.trailHistory.push(pt.x, pt.y);
+      if (p.trailHistory.length > 36) p.trailHistory.splice(0, 2);
+      p.trailEl.setAttribute('points', p.trailHistory.join(' '));
+      if (p.trailHistory.length >= 4) {
+        var px = p.trailHistory[p.trailHistory.length - 4];
+        var py = p.trailHistory[p.trailHistory.length - 3];
+        var angle = Math.atan2(pt.y - py, pt.x - px) * 180 / Math.PI;
+        p.vehicleG.setAttribute('transform', 'translate(' + pt.x + ',' + pt.y + ') rotate(' + angle + ')');
+      } else {
+        p.packetG.setAttribute('transform', 'translate(' + pt.x + ',' + pt.y + ')');
+      }
+    });
+    requestAnimationFrame(animatePackets);
+  }
+  animatePackets();
+})();
+</script>
+<a class="whatsapp-float" href="https://wa.me/541168383333" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="wa-label">Hablemos</span><span class="wa-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/></svg>WhatsApp</span></a>
+</body>
+</html>
